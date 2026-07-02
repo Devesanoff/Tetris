@@ -64,7 +64,7 @@ go run main.go
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 * **Language:** Go (Golang)
 * **Game Engine:** [Ebitengine v2](https://github.com/hajimehoshi/ebiten)
 * **OS Environment:** Linux (Ubuntu)
