@@ -19,7 +19,7 @@ const (
 
 type Game struct {
 	board       [Rows][Cols]color.RGBA
-	current     *blocks.Block // Endi mahalliy Piece emas, blocks.Block ishlatdim
+	current     *blocks.Block 
 	tickCounter int
 }
 
@@ -31,7 +31,7 @@ func New() *Game {
 
 func (g *Game) spawnPiece() {
 	idx := rand.Intn(len(blocks.Shapes))
-	// NewBlock konstruktoridan foydalanamiz
+	
 	g.current = blocks.NewBlock(blocks.Shapes[idx], blocks.Colors[idx], Cols)
 }
 
@@ -139,7 +139,7 @@ func (g *Game) Update() error {
 func (g *Game) Draw(screen *ebiten.Image) {
 	screen.Fill(color.RGBA{20, 20, 20, 255})
 
-	// Qotib qolgan bloklarni chizish
+	
 	for r := 0; r < Rows; r++ {
 		for c := 0; c < Cols; c++ {
 			if g.board[r][c].A != 0 {
@@ -150,7 +150,7 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		}
 	}
 
-	// Hozirgi faol blokni chizish
+	
 	if g.current != nil {
 		for r := range g.current.Shape {
 			for c := range g.current.Shape[r] {
